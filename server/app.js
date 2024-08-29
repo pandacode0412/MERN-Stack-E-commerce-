@@ -13,9 +13,9 @@ app.use(cors({
 
 app.use(express.json());
 app.use(cookieParser());
-app.use("/test", (req, res) => {
-  res.send("Hello world!");
-});
+// app.use("/test", (req, res) => {
+//   res.send("Hello world!");
+// });
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
@@ -52,4 +52,4 @@ app.use("/api/v2/withdraw", withdraw);
 // it's for ErrorHandling
 app.use(ErrorHandler);
 
-module.exports
+module.exports = app
