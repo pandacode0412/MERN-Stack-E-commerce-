@@ -126,6 +126,10 @@ const Singup = () => {
               </div>
             </div>
 
+
+
+
+
             <div>
               <label
                 htmlFor="avatar"

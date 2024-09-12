@@ -23,16 +23,28 @@ const CreateEvent = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  // const handleStartDateChange = (e) => {
+  //   const startDate = new Date(e.target.value);
+  //   const minEndDate = new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000);
+  //   setStartDate(startDate);
+  //   setEndDate(null);
+  //   document.getElementById("end-date").min = minEndDate?.toISOString.slice(
+  //     0,
+  //     10
+  //   );
+  // };
+
   const handleStartDateChange = (e) => {
     const startDate = new Date(e.target.value);
     const minEndDate = new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000);
     setStartDate(startDate);
     setEndDate(null);
-    document.getElementById("end-date").min = minEndDate.toISOString.slice(
-      0,
-      10
-    );
+
+    // Sửa lỗi: Thêm cặp ngoặc tròn sau toISOString
+    document.getElementById("end-date").min = minEndDate.toISOString().slice(0, 10);
   };
+
+
 
   const handleEndDateChange = (e) => {
     const endDate = new Date(e.target.value);
@@ -43,8 +55,8 @@ const CreateEvent = () => {
 
   const minEndDate = startDate
     ? new Date(startDate.getTime() + 3 * 24 * 60 * 60 * 1000)
-        .toISOString()
-        .slice(0, 10)
+      .toISOString()
+      .slice(0, 10)
     : "";
 
   useEffect(() => {

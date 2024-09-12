@@ -1,12 +1,16 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { server } from "../server";
+import Loader from "../components/Layout/Loader";
 
 const ActivationPage = () => {
   const { activation_token } = useParams();
   const [error, setError] = useState(false);
+  const navigate = useNavigate()
+
+
 
   useEffect(() => {
     if (activation_token) {
@@ -26,6 +30,10 @@ const ActivationPage = () => {
     }
   }, []);
 
+  // const hanleOnSuccess = () => {
+  //   if()
+  // }
+
   return (
     <div
       style={{
@@ -39,7 +47,8 @@ const ActivationPage = () => {
       {error ? (
         <p>Your token is expired!</p>
       ) : (
-        <p>Your account has been created suceessfully!</p>
+        <p>Your account has been created suceessfully!</p> && navigate('/login')
+
       )}
     </div>
   );
