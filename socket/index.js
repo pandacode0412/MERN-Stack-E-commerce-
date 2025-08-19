@@ -41,6 +41,124 @@ const createMessage = ({ senderId, receiverId, text, images }) => ({
     seen: false,
 });
 
+
+let users = [];
+
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+        users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (receiverId) => {
+    return users.find((user) => user.userId === receiverId);
+};
+
+// Define a message object with a seen property
+const createMessage = ({ senderId, receiverId, text, images }) => ({
+    senderId,
+    receiverId,
+    text,
+    images,
+    seen: false,
+});
+let users = [];
+
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+        users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (receiverId) => {
+    return users.find((user) => user.userId === receiverId);
+};
+
+// Define a message object with a seen property
+const createMessage = ({ senderId, receiverId, text, images }) => ({
+    senderId,
+    receiverId,
+    text,
+    images,
+    seen: false,
+});
+let users = [];
+
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+        users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (receiverId) => {
+    return users.find((user) => user.userId === receiverId);
+};
+
+// Define a message object with a seen property
+const createMessage = ({ senderId, receiverId, text, images }) => ({
+    senderId,
+    receiverId,
+    text,
+    images,
+    seen: false,
+});
+let users = [];
+
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+        users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (receiverId) => {
+    return users.find((user) => user.userId === receiverId);
+};
+
+// Define a message object with a seen property
+const createMessage = ({ senderId, receiverId, text, images }) => ({
+    senderId,
+    receiverId,
+    text,
+    images,
+    seen: false,
+});
+let users = [];
+
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+        users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (receiverId) => {
+    return users.find((user) => user.userId === receiverId);
+};
+
+// Define a message object with a seen property
+const createMessage = ({ senderId, receiverId, text, images }) => ({
+    senderId,
+    receiverId,
+    text,
+    images,
+    seen: false,
+});
+
+
 io.on("connection", (socket) => {
     // when connect
     console.log(`a user is connected`);
