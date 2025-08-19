@@ -26,4 +26,23 @@ export {
     ShopSettingsPage,
     ShopWithDrawMoneyPage,
     ShopInboxPage
+
+}
+
+
+export {
+    ShopDashboardPage,
+    ShopCreateProduct,
+    ShopAllProducts,
+    ShopCreateEvents,
+    ShopAllEvents,
+    ShopAllCoupouns,
+    ShopPreviewPage,
+    ShopAllOrders,
+    ShopOrderDetails,
+    ShopAllRefunds,
+    ShopSettingsPage,
+    ShopWithDrawMoneyPage,
+    ShopInboxPage
+
 }
